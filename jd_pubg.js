@@ -139,7 +139,7 @@ if ($.isNode()) {
   cookiesArr.reverse();
 }
 const JD_API_HOST = 'https://starsingle.m.jd.com/guardianstar/';
-const inviteCodes = ['ff6d4fdc-55f4-405d-8aa0-bda9414434a0@b110990b-56b7-498c-9f6e-c27254f85008@4dd8b0d4-f11c-4d2e-a85b-7d041b56c16c@e208b4f3-a918-47ed-84fa-009f9f9231ed@20543224-e9d7-4631-a35d-d89bc720ddf1','ff6d4ff6d4fdc-55f4-405d-8aa0-bda9414434a0@b110990b-56b7-498c-9f6e-c27254f85008@4dd8b0d4-f11c-4d2e-a85b-7d041b56c16c@e208b4f3-a918-47ed-84fa-009f9f9231ed@20543224-e9d7-4631-a35d-d89bc720ddf1']
+const inviteCodes = ['ff6d4fdc-55f4-405d-8aa0-bda9414434a0@b110990b-56b7-498c-9f6e-c27254f85008@4dd8b0d4-f11c-4d2e-a85b-7d041b56c16c@e208b4f3-a918-47ed-84fa-009f9f9231ed@20543224-e9d7-4631-a35d-d89bc720ddf1','ff6d4fdc-55f4-405d-8aa0-bda9414434a0@b110990b-56b7-498c-9f6e-c27254f85008@4dd8b0d4-f11c-4d2e-a85b-7d041b56c16c@e208b4f3-a918-47ed-84fa-009f9f9231ed@20543224-e9d7-4631-a35d-d89bc720ddf1']
 !(async () => {
   await requireConfig();
   if (!cookiesArr[0]) {
