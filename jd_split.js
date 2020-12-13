@@ -1,5 +1,6 @@
 /*
 金榜年终奖
+脚本会给内置的码进行助力
 活动时间：2020-12-12日结束
 活动入口：京东APP首页右边浮动飘窗
 已支持IOS双京东账号,Node.js支持N个京东账号
@@ -34,10 +35,15 @@ if ($.isNode()) {
   })
   if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => {};
 } else {
-  cookiesArr.push(...[$.getdata('CookieJD'), $.getdata('CookieJD2')]);
+  let cookiesData = $.getdata('CookiesJD') || "[]";
+  cookiesData = jsonParse(cookiesData);
+  cookiesArr = cookiesData.map(item => item.cookie);
+  cookiesArr.reverse();
+  cookiesArr.push(...[$.getdata('CookieJD2'), $.getdata('CookieJD')]);
+  cookiesArr.reverse();
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-$.newShareCodes = [`P04z54XCjVUnIaW5nJcXCCyoR8C6p8txXBH`, 'P04z54XCjVUnIaW5nJcXCCyoR8C6p8txXBH', 'P04z54XCjVUnIaW5u2ak7ZCdan1BT0NlbBGZ1-rnMYj'];
+$.newShareCodes = [`P04z54XCjVUnIaW5nJcXCCyoR8C6p8txXBH`, 'P04z54XCjVUnIaW5m9cZ2T6jChKki0Hfndla5k', 'P04z54XCjVUnIaW5u2ak7ZCdan1BT0NlbBGZ1-rnMYj', 'P04z54XCjVUnIaW5m9cZ2ariXVJwI64DaVTNXQ'];
 !(async () => {
   if (!cookiesArr[0]) {
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/', {"open-url": "https://bean.m.jd.com/"});
@@ -292,6 +298,17 @@ function safeGet(data) {
     console.log(e);
     console.log(`京东服务器访问数据为空，请检查自身设备网络情况`);
     return false;
+  }
+}
+function jsonParse(str) {
+  if (typeof str == "string") {
+    try {
+      return JSON.parse(str);
+    } catch (e) {
+      console.log(e);
+      $.msg($.name, '', '不要在BoxJS手动复制粘贴修改cookie')
+      return [];
+    }
   }
 }
 // prettier-ignore
