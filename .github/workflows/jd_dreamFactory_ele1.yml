@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: jd_dreamFactory_ele
+name: jd_dreamFactory_ele1
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0,15,30,45 0-16,22-23 * * ?'
+    - cron: '0,30 16-22 * * ?'
   watch:
     types: [started]
   repository_dispatch:
-    types: dreamFactory_ele
+    types: dreamFactory_ele1
 jobs:
   build:
 
