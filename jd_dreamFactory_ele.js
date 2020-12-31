@@ -97,6 +97,8 @@ async function jdDreamFactory() {
   if (!$.unActive) return
   await getUserElectricity();
   await PickUp();//收取自家的地下零件
+  await stealFriend();
+  await taskList();
 }
 
 
