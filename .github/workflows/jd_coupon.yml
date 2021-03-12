@@ -34,6 +34,7 @@ jobs:
           cd ~/scripts
           node -v
           node jd_coupon.js
+          node jd_delCoupon.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}

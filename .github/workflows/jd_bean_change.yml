@@ -6,7 +6,7 @@ name: jd_bean_change
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 1 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -33,6 +33,9 @@ jobs:
           cd ~/scripts
           node jd_necklace.js
           node jd_bean_change.js
+          node jd_syj.js
+          node jd_daily_egg.js
+          node jd_family.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
