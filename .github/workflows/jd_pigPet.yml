@@ -31,7 +31,7 @@ jobs:
       - name: '运行 【金融养猪】'
         run: |
           cd ~/scripts
-          node jd_pigPet.js
+          node jd_pigPetNew.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
