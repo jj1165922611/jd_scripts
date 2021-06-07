@@ -33,19 +33,10 @@ jobs:
       - name: '运行 【京豆变动通知】'
         run: |
           cd ~/scripts
-          node jd_wish.js &
-          node jd_oppo.js &
-          node jd_etip.js &
-          node jd_haier.js &
-          node jd_hf.js &
-          node jd_mrcj.js &
           node jd_cj.js &
-          node jd_friend.js &
           node jd_pk.js &
           node jd_flp.js &
-          node jd_urge.js &
-          node jd_mi.js &
-          node jd_rtm.js &
+          node jd_mohe.js &
           wait
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
@@ -79,7 +70,6 @@ jobs:
         run: |
           cd ~/scripts
           node jd_zoo.js
-          node jd_zoo1.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
@@ -91,7 +81,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/abcllj/lscripts.git ~/scripts
+          git clone https://github.com/libinxwz/jd_scripts.git ~/scripts
       - name: Use Node.js 10.x
         uses: actions/setup-node@v1
         with:
@@ -115,6 +105,256 @@ jobs:
     steps:
       - name: Checkout
         run: |
+          git clone https://github.com/libinxwz/jd_scripts.git ~/scripts
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          cd ~/scripts
+          npm install
+      - name: '运行 【京豆签到脚本】'
+        run: |
+          cd ~/scripts
+          node jd_gold_creator.js
+          node jd_jbczy.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+  build5:
+    name: 家电星推官
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/libinxwz/jd_scripts.git ~/scripts
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          cd ~/scripts
+          npm install
+      - name: '运行 【京豆签到脚本】'
+        run: |
+          cd ~/scripts
+          node jd_xtg.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+  build6:
+    name: 美丽研究院
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/libinxwz/jd_scripts.git ~/scripts
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          cd ~/scripts
+          npm install
+      - name: '运行 【京豆签到脚本】'
+        run: |
+          cd ~/scripts
+          node jd_beauty.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
+  build7:
+    name: 京东星店长
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/libinxwz/jd_scripts.git ~/scripts
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          cd ~/scripts
+          npm install
+      - name: '运行 【京豆签到脚本】'
+        run: |
+          cd ~/scripts
+          node jd_starstore.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
+  build8:
+    name: 总裁宋好礼
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/libinxwz/jd_scripts.git ~/scripts
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          cd ~/scripts
+          npm install
+      - name: '运行 【京豆签到脚本】'
+        run: |
+          cd ~/scripts
+          node jd_babelDiy.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
+  build9:
+    name: 新潮品牌狂欢
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/libinxwz/jd_scripts.git ~/scripts
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          cd ~/scripts
+          npm install
+      - name: '运行 【京豆签到脚本】'
+        run: |
+          cd ~/scripts
+          node jd_xcppkh.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
+  build10:
+    name: 特物ZX联想
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/libinxwz/jd_scripts.git ~/scripts
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          cd ~/scripts
+          npm install
+      - name: '运行 【京豆签到脚本】'
+        run: |
+          cd ~/scripts
+          node jd_twlx.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
+  build11:
+    name: 明星小店(星店长)
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/libinxwz/jd_scripts.git ~/scripts
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          cd ~/scripts
+          npm install
+      - name: '运行 【京豆签到脚本】'
+        run: |
+          cd ~/scripts
+          node jd_star_shop.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
+  build12:
+    name: 新潮品牌狂欢
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/libinxwz/jd_scripts.git ~/scripts
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: npm install
+        run: |
+          cd ~/scripts
+          npm install
+      - name: '运行 【京豆签到脚本】'
+        run: |
+          cd ~/scripts
+          node jd_brandcarnivalcity.js
+          node jd_mcxhd_brandcity.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
+  build13:
+    name: 与'粽'不同
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/libinxwz/jd_scripts.git ~/scripts
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          cd ~/scripts
+          npm install
+      - name: '运行 【京豆签到脚本】'
+        run: |
+          cd ~/scripts
+          node jd_dragonboat.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
+  build18:
+    name: 618手机竞猜
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        run: |
           git clone https://github.com/abcllj/lscripts.git ~/scripts
       - name: Use Node.js 10.x
         uses: actions/setup-node@v1
@@ -127,8 +367,117 @@ jobs:
       - name: '运行 【京豆签到脚本】'
         run: |
           cd ~/scripts
-          node jd_jbczy.js
+          node jd_618jc.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
+  build14:
+    name: 京喜领88元红包
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/libinxwz/jd_scripts.git ~/scripts
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          cd ~/scripts
+          npm install
+      - name: '运行 【京豆签到脚本】'
+        run: |
+          cd ~/scripts
+          node jd_jxlhb.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
+  build15:
+    name: 京东极速版-翻翻乐
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/libinxwz/jd_scripts.git ~/scripts
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          cd ~/scripts
+          npm install
+      - name: '运行 【京豆签到脚本】'
+        run: |
+          cd ~/scripts
+          node jd_flipcards.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
+  build16:
+    name: 大牌联合618提前购
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/libinxwz/jd_scripts.git ~/scripts
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          cd ~/scripts
+          npm install
+      - name: '运行 【京豆签到脚本】'
+        run: |
+          cd ~/scripts
+          node jd_618Opencard01.js
+          node jd_618Opencard02.js
+          node jd_618Opencard03.js
+          node jd_618Opencard04.js
+          node jd_618Opencard05.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
+  build17:
+    name: xxx
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/libinxwz/jd_scripts.git ~/scripts
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          cd ~/scripts
+          npm install
+      - name: '运行 【京豆签到脚本】'
+        run: |
+          cd ~/scripts
+          node jd_618redpacket.js &
+          node jd_limitBox.js &
+          node jd_cash.js &
+          node jd_superBrand.js &
+          wait
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
